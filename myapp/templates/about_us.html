@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang ="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sri Maruthi Pharma</title>
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    {% load static %}
+  <link rel="stylesheet"  href="{%  static 'layout.css' %} ">
+</head>
+<header>
+	<h1>&nbsp;&nbsp;SMP</h1>
+    
+  <nav id="mainnav">
+    <div class="nav-links">
+    <ul class="links">
+      <li><a href="{% url 'self' %}">HOME</a></li>
+      <li><a href="{% url 'about' %}">ABOUT</a></li>
+      <li><a href="{% url 'index' %}">CONTACT</a></li>      
+    </ul>
+  </div>
+  </nav>
+</header>
+
+<div class="wrapper bgded overlay">
+    <div id="pageintro" >
+
+        <h1 class="heading font-x3" style="padding-bottom: 5px; border-bottom: solid white 3px;border-left: white solid; width: 27%; padding-left: 8px;">About SMP</h1>
+        
+        <section class= "para">
+        <p style="text-align: justify; font-size: medium;">SMP is a company, established under a mission of service to humanity,
+             we provide a wide range of pharmaceuticals and we are building a 
+             reputation of quality and integrity known around the world.
+            products that we supply at SMP Meets the best safety and quality
+             standards. We are being audited regularly by officials to ensure that 
+             the highest safety and quality criteria were met.<br><br> <span style="font-size: small;">
+             ** Meets the best safety
+            and quality standards</span>
+            </p>
+        </section>
+    </div>
+  </div>
+
+  <div class="chat">
+    {% load static %}
+    <img id="chaticon" src="{% static 'images/wp.jpg' %}" ><p>+91 385 739 7474</p>
+  </div>
+  
+
+<section class="footer">
+
+  <div class="icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin-in"></i>
+  </div>
+    <p>
+        Copyright <i class="far fa-copyright"></i>2021 - All Rights Reserved</p>
+</section>
+</html>
+
+
+<style>
+.bgded{
+  background-image: repeating-linear-gradient(-200deg,  #004e92 20%, #000428 80%);
+  height: 70vh;
+}
+
+.footer{
+    bottom: 20;
+    text-align: center;
+    
+}
+.para{
+    float: left;
+    width: 50%;   
+}
+
+#pageintro{
+    padding-left:15%;
+}
+nav{
+    font-style:italic;
+    display: flex;
+    padding: 0px 0px 10px 0px;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 0px 20px 10px 20px;
+    position:relative;
+}
+.nav-links ul li a{
+    color:#fff;
+    text-shadow: 0 0 3px rgb(255, 255, 255);
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    font-size: 14px;
+    
+    font-family: 'Poppins', sans-serif;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: rgb(57 93 136);
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width:100%;
+}
+.chat{
+  position: sticky;
+  bottom:30px;
+  padding-right:10px;
+  padding-top: 20px;
+  align-items: right;
+  text-align:right;
+  z-index:1000;
+}
+.chat p{
+  margin-top: 0px;
+}
+#chaticon{
+  border-radius: 30%;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
+  background-color: rgb(12, 218, 12);
+  width:4%;
+}
+</style>

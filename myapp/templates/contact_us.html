@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang ="en">
+<head>
+	<meta charset="utf-8">
+	<title>Sri Maruthi Pharma</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  {% load static %}
+  <link rel="stylesheet"  href="{%  static 'layout.css' %} ">
+</head>
+<header>
+	<h1>&nbsp;&nbsp;SMP</h1>
+  
+  <nav id="mainnav">
+    <div class="nav-links">
+    <ul class="links">
+      <li><a href="{% url 'self' %}">HOME</a></li> 
+      <li><a href="{% url 'about' %}">ABOUT</a></li>
+      <li><a href="{% url 'index' %}">CONTACT</a></li>
+      
+    </ul>
+  </div>
+  </nav>
+ 
+</header>
+
+</div>
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+   
+    <div class="content"> 
+      <div id="comments">
+        <h2>We would love to hear from you</h2>
+        <form id="MyForm" action="" method="post">
+          {% csrf_token %}
+          
+          
+          <div class="one_third first">
+            &emsp; &emsp;<label for="name">Name <span>*</span> &emsp; &emsp;</label>
+            <input type="text" name="name" id="name" value="" size="22" required >
+          </div>
+         
+          <div class="one_third">
+            &emsp;&emsp;<label for="email">Mail <span>*</span> &emsp; &emsp;&nbsp;&ensp;</label>
+            <input type="email" name="email" id="email" value="" size="22" required>
+          </div>
+         
+          <div class="one_third">
+            &emsp;&emsp;<label for="url">Phone No. <span>*</span> &nbsp;&nbsp;&nbsp; </label>
+            <input type="tel" pattern="^\d{10}$" name="phone" id="phone" value="" size="10"  required >
+          </div>
+          
+          <div class="block clear">
+            &emsp;&emsp;<label for="comment">Your Comment</label>
+            <textarea name="comment" id="comment" cols="45" rows="10" placeholder="//Write your message here//" required></textarea>
+          </div>
+          
+          <div class="buttons">
+            &emsp;&emsp;<button type="submit" name="submit" value="Save Form" id="button1">Submit</button>
+            &nbsp;
+            &emsp;&emsp;<button type="reset" name="reset" value="Reset Form"id="button2"> Reset </button>
+
+            <button id = 'right'><a href="{% url 'sample' %}">Continue</a></button>
+          </div>
+        </form>
+      </div>
+    </div>
+   
+    <div class="clear"></div>
+  </main>
+</div>
+
+
+<div class="chat">
+  {% load static %}
+  <img id="chaticon" src="{% static 'images/wp.jpg' %}" ><p>+91 385 739 7474</p>
+</div>
+</body>
+
+<section>
+  
+  <section class="footer">
+    
+   
+    <div class="icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin-in"></i>
+    </div>
+    <p>
+        Copyright <i class="far fa-copyright"></i>2021 - All Rights Reserved</p>
+  </section>
+  
+  </section>
+
+
+</html>
+<style>
+.footer{
+    text-align: center;
+}
+nav{
+  font-style:italic;  
+  display: flex;
+  padding: 0px 0px 10px 0px;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img{
+  width: 150px;
+}
+.nav-links{
+  flex: 1;
+  text-align: right;
+
+}
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 0px 20px 10px 20px;
+  position:relative;
+}
+.nav-links ul li a{
+  color:#fff;
+  text-shadow: 0 0 3px rgb(255, 255, 255);
+  letter-spacing: 0.8px;
+  text-decoration: none;
+  font-size: 14px;
+  
+  font-family: 'Poppins', sans-serif;
+}
+.nav-links ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: rgb(57 93 136);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+  width:100%;
+}
+
+.buttons button {
+  background-color: #1d1e1f; 
+  border: 10px solid white; 
+  color: white;
+  padding: 10px 24px; 
+  cursor: pointer; 
+  float: left;
+}
+
+.buttons button:not(:last-child) {
+  border-right: none; 
+}
+
+.buttons:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.buttons button:hover {
+  text-decoration: underline white 2px;
+  font-weight: bold;
+}
+#right {
+  margin-left: 80%;
+}
+
+#right a{
+  color: #fff;
+}
+.chat{
+  position: sticky;
+  bottom:30px;
+  padding-right:10px;
+  padding-top: 20px;
+  align-items: right;
+  text-align:right;
+  z-index:1000;
+}
+.chat p{
+  margin-top: 0px;
+}
+#chaticon{
+  border-radius: 30%;
+  border-bottom-left-radius: 0px;
+  margin-bottom: 0px;
+  background-color: rgb(12, 218, 12);
+  width:4%;
+}
+</style>
+
+<script>
+
+const MyForm = document.getElementById("MyForm");
+
+MyForm.addEventListener("submit", (e) => {   
+    console.log("form has been Submitted!!!!!!!!!!!!!");
+    
+    window.alert("Response Submitted");
+
+});
+
+</script>
+
+
