@@ -50,7 +50,7 @@ def index(request):
         
     return render(request, 'contact_us.html', context) 
 def self(request):
-    return render(request, 'self.html')
+    return render(request, 'index.html')
 
 
 def about(request):
